@@ -58,6 +58,7 @@ router.patch('/:id', (req, res, next) => {
     .then(result => {
       res.json({
         msg: "Todo successfully updated",
+        successfull_modifications: result.ok,
         data: result
       });
     }).catch(next);
