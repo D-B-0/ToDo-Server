@@ -4,6 +4,8 @@ const morgan = require('morgan');
 require('dotenv').config();
 // routers
 const todoRouter = require('./routers/todoRouter');
+// db
+require('./connect');
 
 const app = express();
 app.use(helmet());
