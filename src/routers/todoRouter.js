@@ -65,7 +65,7 @@ router.patch('/:id', (req, res, next) => {
 
 router.delete('/:id', (req, res, next) => {
   const { id } = req.params;
-  Todo.remove({ _id: id }).exec().then(result => {
+  Todo.deleteOne({ _id: id }).exec().then(result => {
     res.json({
       msg: "Todo successfully deleted",
       data: result
