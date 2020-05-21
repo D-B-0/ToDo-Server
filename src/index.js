@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const cors = require('cors');
 require('dotenv').config();
 // routers
 const todoRouter = require('./routers/todoRouter');
@@ -9,6 +10,7 @@ require('./connect');
 
 const app = express();
 app.use(helmet());
+app.use(cors());
 app.use(morgan('tiny'));
 app.use(express.json());
 
